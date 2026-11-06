@@ -1,0 +1,133 @@
+INCIDENT RESPONSE ACTIONS
+SOC-CASE-001
+--------------------------
+
+1. CONTAINMENT
+
+---
+
+Action:
+Isolate the affected hosts from the network.
+
+Hosts:
+PC-023
+PC-017
+PC-041
+
+Objective:
+Prevent further communication with potentially malicious infrastructure and reduce the risk of lateral movement or additional activity.
+
+2. EVIDENCE PRESERVATION
+
+---
+
+Action:
+Preserve relevant evidence before deleting or modifying suspicious files.
+
+Evidence to preserve:
+
+* invoice.docm
+* update.ps1
+* invoice_update.exe
+* PowerShell execution events
+* Process creation logs
+* Network connection logs
+* Relevant email messages and headers
+
+Objective:
+Maintain evidence required to determine the attack chain, scope, and impact.
+
+3. IOC HUNTING
+
+---
+
+Action:
+Search the environment for known indicators.
+
+Indicators:
+
+* SHA-256: 9f86d081884c7d659a2feaa0c55ad015
+* Filename: invoice.docm
+* Filename: update.ps1
+* Filename: invoice_update.exe
+* IP: 198.51.100.25
+* Process relationship: winword.exe → powershell.exe
+
+Objective:
+Identify additional hosts that may have received or executed the suspicious content.
+
+4. EMAIL CONTAINMENT
+
+---
+
+Action:
+Identify and remove the phishing email from affected mailboxes.
+
+Subject:
+Urgent Invoice 2026
+
+Attachment:
+invoice.docm
+
+Objective:
+Prevent additional users from opening the malicious or suspicious document.
+
+5. USER NOTIFICATION
+
+---
+
+Action:
+Notify affected users and provide guidance not to open or execute suspicious attachments.
+
+Objective:
+Reduce the possibility of additional execution through the same phishing campaign.
+
+6. ANALYSIS
+
+---
+
+Action:
+Investigate the suspicious document, PowerShell script, process tree, network activity, and created executable.
+
+Objective:
+Determine whether the hosts were compromised and identify the attacker's actions.
+
+7. ERADICATION
+
+---
+
+Action:
+After evidence preservation and analysis, remove or quarantine confirmed malicious files and associated artifacts.
+
+Objective:
+Remove the malicious components from affected systems.
+
+8. RECOVERY
+
+---
+
+Action:
+Restore affected systems to a trusted state and reconnect them to the network only after security validation.
+
+Objective:
+Return systems to normal operation while reducing the risk of reinfection.
+
+9. MONITORING
+
+---
+
+Action:
+Continue monitoring affected hosts and search for the identified IOCs.
+
+Objective:
+Detect recurring malicious activity or additional compromised systems.
+
+# RESPONSE SUMMARY
+
+The initial response should prioritize containment and evidence preservation.
+
+PC-023, PC-017, and PC-041 should be investigated as suspicious hosts due to the observed Word-to-PowerShell execution chain.
+
+PC-078 should be treated as potentially exposed because the suspicious document was present, but no execution was detected.
+
+Immediate deletion of suspicious files should be avoided until relevant evidence has been preserved and analyzed.

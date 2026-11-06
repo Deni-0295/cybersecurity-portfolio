@@ -1,0 +1,118 @@
+AFFECTED HOSTS ASSESSMENT
+SOC-CASE-001
+--------------------------
+
+1. PC-023
+
+---
+
+User:
+employee
+
+File:
+invoice.docm
+
+Hash:
+9f86d081884c7d659a2feaa0c55ad015
+
+Observed activity:
+
+* winword.exe → powershell.exe
+* ExecutionPolicy Bypass
+* update.ps1 execution
+* Network connection to 198.51.100.25
+* invoice_update.exe created
+
+Assessment:
+HIGH RISK / POTENTIAL COMPROMISE
+
+Reason:
+PC-023 shows the complete suspicious execution chain and multiple indicators associated with the incident.
+
+2. PC-017
+
+---
+
+User:
+analyst
+
+File:
+invoice.docm
+
+Hash:
+9f86d081884c7d659a2feaa0c55ad015
+
+Observed activity:
+
+* winword.exe → powershell.exe
+
+Assessment:
+SUSPICIOUS / REQUIRES INVESTIGATION
+
+Reason:
+The same suspicious document and hash were observed, followed by PowerShell execution. Additional investigation is required to determine whether the host was compromised.
+
+3. PC-041
+
+---
+
+User:
+user1
+
+File:
+invoice.docm
+
+Hash:
+9f86d081884c7d659a2feaa0c55ad015
+
+Observed activity:
+
+* winword.exe → powershell.exe
+
+Assessment:
+SUSPICIOUS / REQUIRES INVESTIGATION
+
+Reason:
+The host shows the same suspicious document and process relationship observed on other affected systems.
+
+4. PC-078
+
+---
+
+User:
+sales
+
+File:
+invoice.docm
+
+Hash:
+9f86d081884c7d659a2feaa0c55ad015
+
+Observed activity:
+
+* Suspicious file present
+* No PowerShell activity detected
+* No alert generated
+
+Assessment:
+EXPOSED / MONITOR
+
+Reason:
+The presence of the suspicious file alone does not prove compromise. The host should be monitored and the file should be handled according to the incident response procedure.
+
+# HOST SUMMARY
+
+PC-023 → HIGH RISK / POTENTIAL COMPROMISE
+PC-017 → SUSPICIOUS / REQUIRES INVESTIGATION
+PC-041 → SUSPICIOUS / REQUIRES INVESTIGATION
+PC-078 → EXPOSED / MONITOR
+
+# OVERALL ASSESSMENT
+
+The incident affected multiple hosts through the distribution of the same "invoice.docm" file.
+
+PC-023 presents the strongest evidence of compromise.
+
+PC-017 and PC-041 require further investigation due to the suspicious Word-to-PowerShell execution chain.
+
+PC-078 is considered potentially exposed because the suspicious file was present, but no execution or PowerShell activity was observed.

@@ -1,0 +1,112 @@
+INDICATORS OF COMPROMISE (IOCs)
+SOC-CASE-001
+--------------------------
+
+1. SUSPICIOUS FILE
+
+---
+
+Filename:
+invoice.docm
+
+Type:
+Microsoft Word macro-enabled document
+
+Observed on:
+PC-023
+PC-017
+PC-041
+PC-078
+
+Assessment:
+Suspicious document associated with the incident.
+
+2. FILE HASH
+
+---
+
+SHA-256:
+9f86d081884c7d659a2feaa0c55ad015
+
+Observed on:
+PC-023
+PC-017
+PC-041
+PC-078
+
+Assessment:
+The same hash indicates that the same file content was present on multiple hosts.
+
+3. POWERSHELL SCRIPT
+
+---
+
+Filename:
+update.ps1
+
+Path:
+C:\Users\employee\AppData\Temp\update.ps1
+
+Execution:
+powershell.exe -ExecutionPolicy Bypass -File C:\Users\employee\AppData\Temp\update.ps1
+
+Assessment:
+Suspicious PowerShell script executed from a temporary user directory.
+
+4. NETWORK INDICATOR
+
+---
+
+IP Address:
+198.51.100.25
+
+Associated process:
+powershell.exe
+
+Assessment:
+Network communication observed during the suspicious PowerShell execution.
+
+5. CREATED EXECUTABLE
+
+---
+
+Filename:
+invoice_update.exe
+
+Associated process:
+powershell.exe
+
+Assessment:
+Executable created after the suspicious PowerShell activity.
+
+6. PROCESS INDICATOR
+
+---
+
+Parent process:
+winword.exe
+
+Child process:
+powershell.exe
+
+Assessment:
+Suspicious process relationship observed on multiple hosts.
+
+7. EXECUTION PARAMETER
+
+---
+
+Parameter:
+-ExecutionPolicy Bypass
+
+Associated process:
+powershell.exe
+
+Assessment:
+Increases suspicion because the PowerShell process was instructed to bypass normal execution policy restrictions.
+
+# SUMMARY
+
+The identified IOCs are associated with a suspected phishing-based incident.
+
+The strongest indicators are the shared "invoice.docm" file hash, the winword.exe → powershell.exe process relationship, the suspicious PowerShell script, the network connection, and the creation of "invoice_update.exe".

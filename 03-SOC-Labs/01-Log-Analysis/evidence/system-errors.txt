@@ -1,5 +1,5 @@
 SYSTEM ERRORS
-=============
+------------------------
 
 Investigation objective:
 Review system errors reported by the operating system and determine

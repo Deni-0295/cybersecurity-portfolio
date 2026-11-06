@@ -1,12 +1,14 @@
+[English version](README_EN.md)
+
 # IRMA | PORTAFOLIO DE CIBERSEGURIDAD
 
-**Estudiante de Ciberseguridad | Futura Analista SOC**
+**Estudiante de Ciberseguridad | Futura Junior Security / SOC Analyst**
 
 Bienvenido/a a mi portafolio de ciberseguridad.
 
-Este repositorio reúne mi proceso de aprendizaje, prácticas técnicas, laboratorios e investigaciones relacionadas con la ciberseguridad, con especial interés en las operaciones de un Centro de Operaciones de Seguridad (SOC), la detección de amenazas y el análisis de incidentes.
+Este repositorio documenta mi evolución técnica, laboratorios prácticos e investigaciones enfocadas en la ciberseguridad defensiva, con especial interés en las operaciones de un SOC, la ingeniería de seguridad y el análisis de incidentes.
 
-Mi objetivo es desarrollar las habilidades técnicas y analíticas necesarias para identificar actividades sospechosas, investigar amenazas, analizar evidencias digitales y contribuir a la prevención y respuesta ante incidentes de seguridad.
+Mi objetivo es aportar valor como Junior Security / SOC Analyst, desarrollando competencias clave para la detección de amenazas, el endurecimiento de infraestructura y la respuesta efectiva ante eventos maliciosos.
 
 ---
 
@@ -14,7 +16,7 @@ Mi objetivo es desarrollar las habilidades técnicas y analíticas necesarias pa
 
 Estoy realizando una transición profesional del desarrollo web hacia la ciberseguridad, aprovechando mis conocimientos de programación mientras fortalezco mis habilidades en redes, Linux, Windows, análisis de registros y detección de amenazas.
 
-Me interesa especialmente el trabajo de un analista SOC, el monitoreo de seguridad, la investigación de actividades sospechosas y la respuesta ante incidentes.
+Me interesa especialmente el trabajo de un Junior Security / SOC Analyst, el monitoreo de seguridad, la investigación de actividades sospechosas y la respuesta ante incidentes.
 
 Este portafolio documenta mi evolución mediante laboratorios prácticos, investigaciones técnicas y ejercicios realizados en entornos controlados.
 
@@ -265,3 +267,11 @@ No se realizan actividades sobre sistemas sin autorización.
 **GitHub:** [Mi perfil de GitHub](https://github.com/Deni-0295)
 
 **Aprender. Investigar. Detectar. Defender.**
+
+
+Copyright (c) 2026 Irma (Deni-0295). Todos los derechos reservados.
+
+Este repositorio y su contenido (reportes, documentos, imágenes y textos)
+son propiedad de la autora. No se permite copiar, modificar, distribuir
+ni utilizar este material, total o parcialmente, sin autorización
+previa y por escrito.

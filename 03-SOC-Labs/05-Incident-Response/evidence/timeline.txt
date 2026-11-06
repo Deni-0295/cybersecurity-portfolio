@@ -1,0 +1,55 @@
+INCIDENT TIMELINE
+SOC-CASE-001
+--------------------------
+
+10:13:58
+User "employee" opened the file "invoice.docm".
+
+10:14:01
+Microsoft Word (winword.exe) started.
+
+10:14:31
+winword.exe spawned powershell.exe.
+
+10:14:32
+powershell.exe executed:
+
+powershell.exe -ExecutionPolicy Bypass -File C:\Users\employee\AppData\Temp\update.ps1
+
+10:14:35
+powershell.exe established a network connection to:
+
+198.51.100.25
+
+10:14:37
+powershell.exe created:
+
+invoice_update.exe
+
+# ADDITIONAL DISCOVERIES
+
+PC-017
+User: analyst
+Observed behavior: winword.exe → powershell.exe
+File: invoice.docm
+Hash: 9f86d081884c7d659a2feaa0c55ad015
+
+PC-041
+User: user1
+Observed behavior: winword.exe → powershell.exe
+File: invoice.docm
+Hash: 9f86d081884c7d659a2feaa0c55ad015
+
+PC-078
+User: sales
+File: invoice.docm
+Hash: 9f86d081884c7d659a2feaa0c55ad015
+No PowerShell activity detected.
+
+# CONCLUSION
+
+The timeline indicates that the incident may have originated from a phishing email containing the document "invoice.docm".
+
+The same document hash was identified on multiple hosts, suggesting that the same file was distributed to several users.
+
+PC-023 shows the strongest evidence of suspicious activity, including PowerShell execution, ExecutionPolicy Bypass, network communication, and executable creation.

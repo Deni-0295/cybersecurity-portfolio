@@ -133,3 +133,10 @@ Todos los ejercicios documentados en esta sección se realizan exclusivamente co
 Las actividades de simulación, análisis de amenazas y pruebas de seguridad no se realizan sobre sistemas sin autorización.
 
 **Aprender. Investigar. Detectar. Defender.**
+
+Copyright (c) 2026 Irma (Deni-0295). Todos los derechos reservados.
+
+Este repositorio y su contenido (reportes, documentos, imágenes y textos)
+son propiedad de la autora. No se permite copiar, modificar, distribuir
+ni utilizar este material, total o parcialmente, sin autorización
+previa y por escrito.

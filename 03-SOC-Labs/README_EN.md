@@ -133,3 +133,10 @@ All exercises documented in this section are conducted exclusively for education
 Simulation activities, threat analysis, and security testing are never performed on systems without proper authorization.
 
 **Learn. Investigate. Detect. Defend.**
+
+Copyright (c) 2026 Irma (Deni-0295). Todos los derechos reservados.
+
+Este repositorio y su contenido (reportes, documentos, imágenes y textos)
+son propiedad de la autora. No se permite copiar, modificar, distribuir
+ni utilizar este material, total o parcialmente, sin autorización
+previa y por escrito.

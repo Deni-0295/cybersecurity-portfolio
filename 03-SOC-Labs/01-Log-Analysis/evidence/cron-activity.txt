@@ -1,5 +1,5 @@
 CRON ACTIVITY
-=============
+------------------------
 
 Investigation objective:
 Identify scheduled tasks executed through CRON and review the

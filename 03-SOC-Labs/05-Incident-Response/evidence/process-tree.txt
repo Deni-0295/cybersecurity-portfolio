@@ -1,0 +1,38 @@
+PROCESS TREE
+SOC-CASE-001
+--------------------------
+
+PRIMARY HOST: PC-023
+
+winword.exe
+|
+└── powershell.exe
+|
+├── update.ps1
+|
+├── Network Connection
+|       └── 198.51.100.25
+|
+└── invoice_update.exe
+
+# COMMAND EXECUTED
+
+powershell.exe -ExecutionPolicy Bypass -File C:\Users\employee\AppData\Temp\update.ps1
+
+# PARENT PROCESS
+
+winword.exe
+
+# CHILD PROCESS
+
+powershell.exe
+
+# ANALYSIS
+
+The process relationship winword.exe → powershell.exe is suspicious because Microsoft Word normally does not need to launch PowerShell during normal document processing.
+
+The use of PowerShell with the "-ExecutionPolicy Bypass" parameter increases the level of suspicion because it allows the PowerShell process to bypass normal execution policy restrictions.
+
+The PowerShell process executed a script from the user's AppData\Temp directory.
+
+After execution, PowerSh

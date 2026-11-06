@@ -1,5 +1,5 @@
 SUDO ACTIVITY
-=============
+------------------------
 
 Investigation objective:
 Review privileged activity performed through sudo and identify

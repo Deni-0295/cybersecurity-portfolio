@@ -1,5 +1,5 @@
 SSH AUTHENTICATION SUMMARY
---------------------------
+-----------------------------
 
 IP: 192.0.2.50
 Failed attempts: 5

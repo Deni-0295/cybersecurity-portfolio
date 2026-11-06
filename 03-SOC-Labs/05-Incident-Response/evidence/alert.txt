@@ -1,0 +1,25 @@
+ALERT: Suspicious PowerShell Activity
+
+Alert ID:
+SOC-CASE-001
+
+Severity:
+High
+
+Host:
+PC-023
+
+User:
+employee
+
+Process:
+powershell.exe
+
+Parent Process:
+winword.exe
+
+Command:
+powershell.exe -ExecutionPolicy Bypass -File C:\Users\employee\AppData\Temp\update.ps1
+
+Time:
+2026-10-08 10:14:32

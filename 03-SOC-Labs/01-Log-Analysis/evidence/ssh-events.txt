@@ -1,5 +1,5 @@
 SSH EVENTS
-==========
+------------------------
 
 Investigation objective:
 Identify SSH authentication activity and determine whether remote

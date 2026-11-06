@@ -12,13 +12,11 @@ El ejercicio se realizó utilizando registros SSH de autenticación simulados.
 
 ## 2. Entorno
 
-- **Sistema operativo:** Terminal de macOS.
+- **Sistema operativo:** Terminal de Linux.
 - **Formato de registros:** Registros de autenticación SSH.
 - **Fuente de datos:** Eventos de seguridad simulados.
 - **Tipo de análisis:** Análisis de registros mediante la línea de comandos.
 - **Herramientas principales:** `grep`, `awk`, `sort`, `uniq`, `wc`, `head`, `tail`.
-
-> Nota: Se utilizó macOS como entorno de práctica porque muchas de las herramientas de línea de comandos empleadas en este ejercicio están disponibles en su terminal basada en Unix. Esto no significa que macOS sea Linux.
 
 ---
 

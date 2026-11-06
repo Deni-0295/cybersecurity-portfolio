@@ -1,6 +1,6 @@
 # SOC-CASE-003 — Análisis de Phishing
 
-**Misión:** 3 — Análisis de Phishing  
+**Laboratorio:** 3 — Análisis de Phishing  
 **Analista:** Laboratorio de Portafolio de Ciberseguridad  
 **Estado:** Investigación documentada  
 **Entorno:** Escenario simulado  

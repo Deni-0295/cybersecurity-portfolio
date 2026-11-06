@@ -1,3 +1,5 @@
+[English version](README_EN.md)
+
 # 03 | SOC LABS — LABORATORIOS SOC
 
 **Laboratorios prácticos de investigación, análisis y detección de amenazas**
@@ -30,7 +32,7 @@ Los ejercicios se desarrollan en entornos controlados y con fines educativos.
 |---|---|---|
 | [01 - Log Analysis](./01-Log-Analysis/) | Identificar fuentes de registros y analizar eventos de Linux. | 🟢 Terminada |
 | [02 - Brute Force Detection](./02-Brute-Force-Detection/) | Investigar intentos de autenticación SSH y detectar patrones de fuerza bruta. | 🟢 Terminada |
-| [03 - Phishing Analysis](./03-Phishing-Analysis/) | Analizar correos sospechosos, encabezados, URL e indicadores de phishing. | 🔵 En proceso |
+| [03 - Phishing Analysis](./03-Phishing-Analysis/) | Analizar correos sospechosos, encabezados, URL e indicadores de phishing. | 🟢 Terminada |
 | [04 - Malware Analysis](./04-Malware-Analysis/) | Investigar archivos sospechosos y analizar comportamientos potencialmente maliciosos. | 🟢 Terminada  |
 | [05 - Incident Response](./05-Incident-Response/) | Practicar procesos de investigación, contención y respuesta ante incidentes. | 🟢 Terminada  |
 | [06 - SIEM Fundamentals](./06-SIEM-Fundamentals/) | Comprender los fundamentos SIEM, el monitoreo y el análisis de eventos de seguridad. | 🔵 En proceso |

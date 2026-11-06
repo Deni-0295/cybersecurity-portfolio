@@ -1,3 +1,5 @@
+[Versión español](README.md)
+
 # Linux Log Analysis
 
 ## Overview

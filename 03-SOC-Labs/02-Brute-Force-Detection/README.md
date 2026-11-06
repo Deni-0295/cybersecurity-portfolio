@@ -1,3 +1,5 @@
+[English version](README_EN.md)
+
 # Detección de Fuerza Bruta SSH
 
 ## 1. Objetivo

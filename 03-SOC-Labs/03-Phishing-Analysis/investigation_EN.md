@@ -1,6 +1,6 @@
 # SOC-CASE-003 — Phishing Analysis
 
-**Mission:** 3 — Phishing Analysis  
+**Laboratory:** 3 — Phishing Analysis  
 **Analyst:** Cybersecurity Portfolio Lab  
 **Status:** Investigation Documented  
 **Environment:** Simulated Scenario  
@@ -106,7 +106,7 @@ If a similar email were encountered in a real environment, potential risks could
 - Credential theft.
 - Unauthorized account access.
 - Use of a compromised account to send additional phishing messages.
-- Access to organizational resources, depending on the account's permissions.
+- Access to organizational resources, depending on the account's perLaboratorys.
 
 There is no evidence in this lab that any of these impacts actually occurred.
 

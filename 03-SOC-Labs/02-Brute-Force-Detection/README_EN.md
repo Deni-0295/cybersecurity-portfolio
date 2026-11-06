@@ -1,3 +1,5 @@
+[Versión español](README.md)
+
 # SSH Brute Force Detection
 
 ## 1. Objective

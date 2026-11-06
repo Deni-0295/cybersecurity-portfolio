@@ -1,4 +1,4 @@
-# MISSION 03 — PHISHING ANALYSIS
+# Laboratory 03 — PHISHING ANALYSIS
 
 Case ID: SOC-CASE-003
 Environment: Simulated phishing investigation

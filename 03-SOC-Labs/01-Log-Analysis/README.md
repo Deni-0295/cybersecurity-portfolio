@@ -1,4 +1,5 @@
-[🇲🇽 Español](README.md) | [🇺🇸 English](README.en.md)
+[English version](README.en.md)
+
 # Análisis de Registros de Linux
 
 ## Descripción general

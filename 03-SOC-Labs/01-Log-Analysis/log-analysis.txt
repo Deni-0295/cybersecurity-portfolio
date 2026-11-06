@@ -1,0 +1,157 @@
+# ANÁLISIS DE REGISTROS DE LINUX
+
+**Objetivo:**
+
+Analizar los registros del sistema para identificar actividades de autenticación, acciones administrativas, tareas programadas y errores del sistema.
+
+**Sistema:**
+
+Kali Linux
+
+**Herramientas:**
+
+- `journalctl`
+- `grep`
+- `systemd-journald`
+
+---
+
+## 1. FUENTES DE REGISTROS
+
+Se revisó el directorio `/var/log` para identificar las fuentes de registros disponibles.
+
+Entre las fuentes relevantes se encontraron:
+
+- `journal/`
+- `wtmp`
+- `wtmp.db`
+- `btmp`
+- `boot.log`
+- `Xorg.0.log`
+- `lightdm/`
+- Directorios específicos de los servicios.
+
+El sistema utiliza `systemd-journald` para la gestión centralizada de registros.
+
+---
+
+## 2. AUTENTICACIÓN SSH
+
+**Comando:**
+
+```bash
+sudo journalctl _COMM=sshd --since "24 hours ago" --no-pager
+```
+
+**Resultado:**
+
+```text
+-- No entries --
+```
+
+**Observación:**
+
+No se registraron eventos SSH durante las 24 horas anteriores.
+
+Esto es consistente con el hecho de que el servicio SSH se encontraba inactivo durante la evaluación.
+
+---
+
+## 3. ACTIVIDAD DE SUDO
+
+**Comando:**
+
+```bash
+sudo journalctl _COMM=sudo --since "24 hours ago" --no-pager
+```
+
+La actividad observada incluyó comandos ejecutados por el usuario `kali` mediante `sudo`, utilizando privilegios de `root`.
+
+Algunos ejemplos fueron:
+
+- `ss -tulnp`
+- `ss -tuln`
+- `iptables -L -n -v`
+- `nft list ruleset`
+- `journalctl`
+
+El journal también registró la apertura y el cierre de las sesiones de `sudo`.
+
+**Evaluación:**
+
+La actividad de `sudo` observada corresponde a los comandos ejecutados durante la investigación de seguridad.
+
+---
+
+## 4. ACTIVIDAD DE CRON
+
+El journal contenía varios eventos de CRON ejecutados como `root`.
+
+Algunos ejemplos fueron:
+
+- `debian-sa1`
+- Limpieza de sesiones de PHP.
+- Tareas programadas por hora.
+
+Estos eventos representan actividades programadas del sistema.
+
+---
+
+## 5. ERRORES DEL SISTEMA
+
+**Comando:**
+
+```bash
+sudo journalctl -p err..alert --since "24 hours ago" --no-pager
+```
+
+Se identificaron varios eventos con nivel de error.
+
+El evento que apareció con mayor frecuencia fue:
+
+```text
+vmwgfx: vmwgfx seems to be running on an unsupported hypervisor.
+```
+
+Este evento apareció durante múltiples arranques del sistema.
+
+También se identificaron otros eventos, entre ellos:
+
+- Mensajes de LightDM/PAM.
+- Ausencia del servicio `evolution-source-registry.service`.
+- Otros mensajes relacionados con el entorno de escritorio.
+
+**Evaluación:**
+
+Los mensajes de `vmwgfx` están relacionados con el entorno gráfico virtualizado. Las evidencias disponibles no indican actividad maliciosa.
+
+Los demás errores observados parecen estar relacionados con componentes del entorno de escritorio o servicios que no se encuentran disponibles.
+
+---
+
+## 6. INTERPRETACIÓN DE SEGURIDAD
+
+No todos los eventos registrados con nivel de error representan un incidente de seguridad.
+
+Los eventos deben analizarse considerando su contexto, incluyendo:
+
+- Proceso o servicio responsable.
+- Usuario asociado al evento.
+- Hora de ocurrencia.
+- Frecuencia.
+- Actividad previa del sistema.
+- Si el evento es esperado dentro del entorno.
+
+Los eventos de `sudo` observados durante esta investigación eran esperados, ya que correspondían a comandos ejecutados intencionalmente durante la evaluación.
+
+No se identificaron eventos de autenticación SSH durante el período de 24 horas revisado.
+
+---
+
+## 7. CONCLUSIÓN
+
+Se realizó correctamente el análisis del journal de Linux para identificar actividades de autenticación, comandos privilegiados, tareas programadas y errores del sistema.
+
+La investigación demostró que la severidad de un registro, por sí sola, no es suficiente para clasificar un evento como malicioso.
+
+Es necesario analizar el contexto y correlacionar los eventos con otras evidencias del sistema antes de determinar si una actividad representa un comportamiento sospechoso.

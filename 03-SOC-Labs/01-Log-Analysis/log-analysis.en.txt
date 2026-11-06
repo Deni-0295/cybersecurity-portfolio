@@ -1,0 +1,163 @@
+LINUX LOG ANALYSIS
+
+Objective:
+Analyze system logs to identify authentication activity,
+administrative actions, scheduled tasks and system errors.
+
+System:
+Kali Linux
+
+Tools:
+
+* journalctl
+* grep
+* systemd-journald
+
+---
+
+1. LOG SOURCES
+
+The /var/log directory was reviewed to identify available
+log sources.
+
+Relevant sources included:
+
+* journal/
+* wtmp
+* wtmp.db
+* btmp
+* boot.log
+* Xorg.0.log
+* lightdm/
+* Service-specific log directories
+
+The system uses systemd-journald for centralized logging.
+
+---
+
+2. SSH AUTHENTICATION
+
+Command:
+
+sudo journalctl _COMM=sshd --since "24 hours ago" --no-pager
+
+Result:
+
+-- No entries --
+
+Observation:
+
+No SSH events were recorded during the previous 24 hours.
+
+This is consistent with the SSH service being inactive during
+the assessment.
+
+---
+
+3. SUDO ACTIVITY
+
+Command:
+
+sudo journalctl _COMM=sudo --since "24 hours ago" --no-pager
+
+Observed activity included commands executed by the user
+kali through sudo with root privileges.
+
+Examples included:
+
+* ss -tulnp
+* ss -tuln
+* iptables -L -n -v
+* nft list ruleset
+* journalctl
+
+The journal also recorded the opening and closing of sudo
+sessions.
+
+Assessment:
+
+The observed sudo activity corresponds to commands executed
+during the security investigation.
+
+---
+
+4. CRON ACTIVITY
+
+The journal contained several CRON events running as root.
+
+Examples included:
+
+* debian-sa1
+* php session cleanup
+* hourly cron tasks
+
+These events represent scheduled system activity.
+
+---
+
+5. SYSTEM ERRORS
+
+Command:
+
+sudo journalctl -p err..alert --since "24 hours ago" --no-pager
+
+Several error-level events were identified.
+
+The most repeated event was:
+
+vmwgfx: vmwgfx seems to be running on an unsupported hypervisor.
+
+This event appeared during multiple system boots.
+
+Additional events included:
+
+* LightDM/PAM messages
+* Missing evolution-source-registry.service
+* Other desktop environment related messages
+
+Assessment:
+
+The vmwgfx messages are associated with the virtualized
+graphics environment. The available evidence does not
+indicate malicious activity.
+
+The other observed errors appear related to desktop
+components or unavailable services.
+
+---
+
+6. SECURITY INTERPRETATION
+
+Not every error-level log event represents a security
+incident.
+
+Events must be analyzed using context, including:
+
+* Process or service responsible
+* User associated with the event
+* Time of occurrence
+* Frequency
+* Previous system activity
+* Whether the event is expected in the environment
+
+The sudo events observed during this investigation were
+expected because they corresponded to commands intentionally
+executed during the assessment.
+
+No SSH authentication events were identified during the
+reviewed 24-hour period.
+
+---
+
+7. CONCLUSION
+
+The Linux journal was successfully analyzed to identify
+authentication activity, privileged commands, scheduled tasks
+and system errors.
+
+The investigation demonstrated that log severity alone is not
+sufficient to classify an event as malicious.
+
+Context and correlation with other system evidence are required
+before determining whether an event represents suspicious
+activity.

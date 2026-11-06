@@ -1,0 +1,7 @@
+FAILED SSH AUTHENTICATION EVENTS
+--------------------------------
+10:01:21 | User: admin | Source IP: 192.0.2.50
+10:01:24 | User: admin | Source IP: 192.0.2.50
+10:01:28 | User: admin | Source IP: 192.0.2.50
+10:01:32 | User: admin | Source IP: 192.0.2.50
+10:01:36 | User: admin | Source IP: 192.0.2.50

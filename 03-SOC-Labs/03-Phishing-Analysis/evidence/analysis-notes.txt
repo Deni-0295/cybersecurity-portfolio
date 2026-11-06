@@ -1,0 +1,141 @@
+# MISSION 03 — PHISHING ANALYSIS
+
+Case ID: SOC-CASE-003
+Environment: Simulated phishing investigation
+Status: Initial analysis completed
+
+1. EXECUTIVE SUMMARY
+
+---
+
+A simulated email claims to be from Microsoft Security and threatens
+to suspend the recipient's Microsoft 365 account within 24 hours.
+
+The message contains a suspicious URL that uses Microsoft-related
+wording in a subdomain, while the registrable domain is example.com.
+
+The email also contains authentication results indicating SPF and
+DMARC failures and no DKIM signature reported.
+
+Initial assessment: HIGHLY SUSPICIOUS SIMULATED EMAIL.
+
+2. SENDER ANALYSIS
+
+---
+
+Displayed sender:
+Microsoft Security [security@microsoft-support-alert.com](mailto:security@microsoft-support-alert.com)
+
+Sender domain:
+microsoft-support-alert.com
+
+Observation:
+The sender domain does not match Microsoft's official domain,
+microsoft.com. The wording may be intended to create trust.
+
+3. EMAIL CONTENT ANALYSIS
+
+---
+
+Subject:
+Urgent: Your Microsoft 365 account will be suspended
+
+Observed indicators:
+
+* Urgency: The recipient has 24 hours to act.
+* Threat: The message threatens account suspension.
+* Impersonation: The sender claims to represent Microsoft Security.
+* Credential risk: The recipient is asked to verify their identity
+  through a login link.
+
+4. URL ANALYSIS
+
+---
+
+URL:
+https://microsoft-security-verification.example.com/login
+
+Protocol:
+HTTPS
+
+Subdomain:
+microsoft-security-verification
+
+Registrable domain:
+example.com
+
+Path:
+/login
+
+Observation:
+The subdomain uses Microsoft-related wording, but the registrable
+domain is example.com, not microsoft.com.
+
+Risk:
+The login path could be used to request credentials. Entering
+credentials on an untrusted website could expose the account.
+
+Note:
+HTTPS protects data in transit but does not establish that a website
+is legitimate.
+
+5. EMAIL HEADER ANALYSIS
+
+---
+
+Return-Path:
+[bounce@mailer-example.net](mailto:bounce@mailer-example.net)
+
+Message-ID:
+[20261008.094200.12345@mailer-example.net](mailto:20261008.094200.12345@mailer-example.net)
+
+Reported sending IP:
+203.0.113.25
+
+Authentication results:
+SPF: fail
+DKIM: none
+DMARC: fail
+
+Observations:
+
+* SPF failed according to the simulated receiver's results.
+* No DKIM signature is reported in the provided results.
+* DMARC failed according to the simulated receiver's results.
+* From and Return-Path use different domains; this requires context
+  and is not proof of phishing on its own.
+* The IP address belongs to a range reserved for documentation.
+
+6. POTENTIAL IMPACT
+
+---
+
+If this were a real phishing campaign, a victim might disclose
+Microsoft account credentials to an unauthorized party.
+
+Possible consequences include account compromise and unauthorized
+access to organizational resources.
+
+7. LIMITATIONS
+
+---
+
+All email and header data in this exercise are simulated.
+
+The URL was not opened, and no external systems were contacted.
+The sending IP, domain reputation, and authentication results were
+not independently verified.
+
+No actual compromise has been established.
+
+8. PRELIMINARY CONCLUSION
+
+---
+
+The simulated message has multiple phishing indicators:
+sender-domain mismatch, impersonation, urgency, a threat of account
+suspension, a suspicious login URL, and failed SPF/DMARC results.
+
+The evidence supports classifying the message as highly suspicious
+within this simulated exercise. A real incident would require
+additional validation before making a definitive attribution.

@@ -1,0 +1,29 @@
+=== URL Analysis ===
+
+Original URL:
+https://microsoft-security-verification.example.com/login
+
+Protocol:
+HTTPS
+
+Subdomain:
+microsoft-security-verification
+
+Registrable domain:
+example.com
+
+Path:
+/login
+
+Initial assessment:
+The URL is suspicious because the registrable domain is example.com
+and does not belong to Microsoft. The subdomain uses the name
+"microsoft-security-verification" to create the appearance of a
+legitimate Microsoft security service.
+
+The /login path suggests that the user may be directed to a login
+page where credentials could potentially be requested.
+
+Risk:
+Potential credential theft if the user enters authentication
+information into the suspicious website.

@@ -1,0 +1,32 @@
+# Indicators of Compromise (IOCs)
+
+## Case Information
+
+**Case ID:** SOC-CASE-003
+**Lab:** 03 — Phishing Analysis
+**Environment:** Simulated phishing scenario
+
+## 1. Email Indicator
+
+* **Sender email:** [security@microsoft-support-alert.com](mailto:security@microsoft-support-alert.com)
+* **Sender domain:** microsoft-support-alert.com
+* **Assessment:** Suspicious sender domain that appears to impersonate Microsoft.
+
+## 2. URL Indicator
+
+* **URL:** https://microsoft-security-verification.example.com/login
+* **Protocol:** HTTPS
+* **Subdomain:** microsoft-security-verification
+* **Registrable domain:** example.com
+* **Path:** /login
+* **Assessment:** The URL uses Microsoft-related wording in its subdomain but does not use Microsoft's official domain.
+
+## 3. Phishing Indicators
+
+* **Urgency:** Account suspension threatened within 24 hours.
+* **Impersonation:** The message claims to represent Microsoft Security.
+* **Credential theft risk:** The user is asked to verify their identity through a login link.
+
+## 4. Limitations
+
+This investigation uses simulated data for educational purposes. The indicators have not been validated against a real phishing campaign. No external links were opened.

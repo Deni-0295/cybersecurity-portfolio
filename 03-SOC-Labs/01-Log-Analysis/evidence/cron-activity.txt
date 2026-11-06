@@ -1,0 +1,29 @@
+CRON ACTIVITY
+=============
+
+Investigation objective:
+Identify scheduled tasks executed through CRON and review the
+associated authentication/session events.
+
+Observed events:
+
+pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+
+pam_unix(cron:session): session closed for user root
+
+Scheduled activity included system maintenance tasks such as:
+
+- phpsessionclean
+
+Interpretation:
+
+CRON generated PAM session events for the `root` account.
+
+The observed activity is consistent with scheduled system tasks.
+The fact that the task runs as root is not, by itself, evidence
+of malicious activity.
+
+Assessment:
+
+No confirmed malicious CRON activity was identified from the
+reviewed evidence.

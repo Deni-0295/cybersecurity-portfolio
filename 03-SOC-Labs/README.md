@@ -1,76 +1,133 @@
-# 🔎 03 · SOC Labs
+# 03 | SOC LABS — LABORATORIOS SOC
 
-Laboratorios prácticos que simulan el trabajo diario de un **Analista SOC Junior (Nivel 1)**: revisar alertas, analizar logs, detectar ataques, investigar correos sospechosos, estudiar malware, documentar hallazgos y apoyar la respuesta a incidentes.
+**Laboratorios prácticos de investigación, análisis y detección de amenazas**
 
-![Rol](https://img.shields.io/badge/rol-Analista%20SOC%20Junior-a78bfa?style=for-the-badge)
-![Enfoque](https://img.shields.io/badge/enfoque-Blue%20Team-22d3ee?style=for-the-badge)
-![MITRE](https://img.shields.io/badge/MITRE-ATT%26CK-ef4444?style=for-the-badge)
+## Descripción general
 
-⬅️ [Volver al portafolio](../README.md)
+Esta sección reúne laboratorios prácticos orientados al desarrollo de habilidades técnicas y analíticas relacionadas con las operaciones de un Centro de Operaciones de Seguridad (SOC).
 
----
+El objetivo es aprender a identificar actividades sospechosas, analizar registros de seguridad, investigar posibles amenazas, reconocer indicadores de compromiso (IOC) y comprender los procesos de respuesta ante incidentes.
 
-## 📂 Laboratorios
+Cada laboratorio documenta el objetivo, el entorno utilizado, las herramientas, el procedimiento de investigación, las evidencias recopiladas y los resultados obtenidos.
 
-| # | Carpeta | De qué trata | Estado |
-|---|---|---|---|
-| 01 | [`01-Log-Analysis`](./03-SOC-Labs/01-Log-Analysis) | Lectura, filtrado y correlación de logs para encontrar actividad sospechosa | 🛠️ En progreso |
-| 02 | [`02-Brute-Force-Detection`](./03-SOC-Labs/02-Brute-Force-Detection) | Detección de intentos de fuerza bruta a partir de múltiples fallos de autenticación | 🛠️ En progreso |
-| 03 | [`03-Phishing-Analysis`](./03-SOC-Labs/03-Phishing-Analysis) | Análisis de correos de phishing: encabezados, enlaces, adjuntos e indicadores de compromiso (IoC) | 🛠️ En progreso |
-| 04 | [`04-Malware-Analysis`](./03-SOC-Labs/04-Malware-Analysis) | Análisis básico (estático y de comportamiento) de muestras en un entorno aislado | 🛠️ En progreso |
-| 05 | [`05-Incident-Response`](./03-SOC-Labs/05-Incident-Response) | Respuesta a incidentes: identificación, contención, erradicación, recuperación y lecciones aprendidas | 🛠️ En progreso |
+Los ejercicios se desarrollan en entornos controlados y con fines educativos.
 
 ---
 
-## 🗺️ Relación con MITRE ATT&CK
+## Estado de los laboratorios
 
-| Laboratorio | Técnica de referencia |
+| Estado | Significado |
 |---|---|
-| Brute Force Detection | [T1110 · Brute Force](https://attack.mitre.org/techniques/T1110/) |
-| Phishing Analysis | [T1566 · Phishing](https://attack.mitre.org/techniques/T1566/) |
-| Malware Analysis | [TA0002 · Execution](https://attack.mitre.org/tactics/TA0002/) |
-| Incident Response | Ciclo de vida de respuesta a incidentes (NIST SP 800-61) |
+| 🟢 **Terminada** | Laboratorio completado y documentado |
+| 🔵 **En proceso** | Laboratorio actualmente en desarrollo |
+| ⚪ **Planeada** | Laboratorio pendiente de comenzar |
 
 ---
 
-## 🔄 Flujo de trabajo en un SOC
+## Laboratorios
+
+| Laboratorio | Objetivo | Estado |
+|---|---|---|
+| [01 - Log Analysis](./01-Log-Analysis/) | Identificar fuentes de registros y analizar eventos de Linux. | 🟢 Terminada |
+| [02 - Brute Force Detection](./02-Brute-Force-Detection/) | Investigar intentos de autenticación SSH y detectar patrones de fuerza bruta. | 🟢 Terminada |
+| [03 - Phishing Analysis](./03-Phishing-Analysis/) | Analizar correos sospechosos, encabezados, URL e indicadores de phishing. | 🔵 En proceso |
+| [04 - Malware Analysis](./04-Malware-Analysis/) | Investigar archivos sospechosos y analizar comportamientos potencialmente maliciosos. | 🟢 Terminada  |
+| [05 - Incident Response](./05-Incident-Response/) | Practicar procesos de investigación, contención y respuesta ante incidentes. | 🟢 Terminada  |
+| [06 - SIEM Fundamentals](./06-SIEM-Fundamentals/) | Comprender los fundamentos SIEM, el monitoreo y el análisis de eventos de seguridad. | 🔵 En proceso |
+
+---
+
+## Objetivos de aprendizaje
+
+A través de estos laboratorios busco desarrollar las siguientes habilidades:
+
+- **Análisis de registros:** interpretar eventos de autenticación, actividad del sistema y registros de seguridad.
+- **Detección de amenazas:** identificar patrones sospechosos y posibles indicadores de compromiso.
+- **Investigación de incidentes:** recopilar, analizar y correlacionar evidencias.
+- **Análisis de phishing:** reconocer técnicas de ingeniería social y correos fraudulentos.
+- **Análisis de malware:** comprender comportamientos sospechosos y posibles mecanismos de ejecución.
+- **Monitoreo de seguridad:** conocer el funcionamiento de las plataformas SIEM.
+- **Respuesta a incidentes:** comprender las etapas de identificación, análisis, contención y recuperación.
+- **Documentación técnica:** elaborar informes estructurados con hallazgos y conclusiones.
+
+---
+
+## Herramientas y tecnologías
+
+Las herramientas utilizadas o contempladas dentro de esta ruta de aprendizaje incluyen:
+
+| Categoría | Herramientas |
+|---|---|
+| Sistemas operativos | Kali Linux, Linux y Windows |
+| Análisis de registros | journalctl, grep, awk |
+| Redes | Wireshark |
+| Programación | Python, Bash y PowerShell |
+| SIEM | Wazuh, Splunk y Elastic Security |
+| Detección | Sigma y YARA |
+| Inteligencia de amenazas | Fuentes de análisis de IP, dominios, URL y hashes |
+| Frameworks | MITRE ATT&CK |
+| Documentación | Git y GitHub |
+
+*Cada laboratorio especifica las herramientas que realmente fueron utilizadas.*
+
+---
+
+## Metodología de investigación
+
+Los laboratorios siguen un flujo de trabajo basado en actividades habituales de investigación SOC:
+
+1. **Definición del objetivo:** identificar qué actividad o problema de seguridad se investigará.
+2. **Preparación del entorno:** configurar los sistemas y herramientas necesarios.
+3. **Recolección de evidencias:** obtener registros, eventos, archivos e indicadores relevantes.
+4. **Análisis:** examinar la información e identificar comportamientos sospechosos.
+5. **Correlación:** relacionar eventos y evidencias para comprender lo ocurrido.
+6. **Clasificación:** determinar los hallazgos y su posible impacto.
+7. **Documentación:** registrar procedimientos, evidencias y resultados.
+8. **Conclusión:** presentar los resultados y posibles acciones recomendadas.
+
+---
+
+## Estructura de los laboratorios
+
+Cada laboratorio contará, según las necesidades del ejercicio, con una organización similar a la siguiente:
 
 ```text
-Logs  →  Detección  →  Triage  →  Análisis  →  Respuesta  →  Documentación
-(01)      (02)         (03)       (04)         (05)          (en cada lab)
+XX-Lab-Name/
+│
+├── README.md
+│
+├── evidence/
+│   ├── evidence-files.txt
+│   └── analysis-results.txt
+│
+├── investigation.md
+│
+└── screenshots/
 ```
 
----
+**Descripción de los archivos:**
 
-## 🧰 Habilidades que practico
+- `README.md`: presenta el laboratorio, sus objetivos y herramientas.
+- `evidence/`: almacena los archivos y resultados obtenidos durante la investigación.
+- `investigation.md`: documenta el procedimiento, análisis, hallazgos y conclusiones.
+- `screenshots/`: contiene capturas de pantalla que respaldan las actividades realizadas.
 
-- Análisis y correlación de logs
-- Detección de patrones de ataque y creación de alertas
-- Investigación de correos y extracción de IoC
-- Análisis estático y de comportamiento de malware
-- Documentación de incidentes y recomendaciones de mitigación
-
----
-
-## 🧪 Estructura de cada laboratorio
-
-```text
-NN-Nombre-del-Lab/
-├── README.md       # Objetivo, escenario, herramientas y conclusiones
-├── evidencias/     # Capturas de pantalla y logs de ejemplo
-├── analisis.md     # Hallazgos paso a paso
-└── reporte.md      # Resumen tipo reporte de incidente
-```
-
-Plantilla del reporte:
-
-1. **Resumen**: qué pasó, en pocas líneas
-2. **Cronología**: eventos en orden
-3. **Indicadores de compromiso (IoC)**: IP, dominios, hashes
-4. **Técnicas MITRE ATT&CK** observadas
-5. **Impacto y severidad**
-6. **Acciones recomendadas**
+La estructura puede variar según el tipo de laboratorio.
 
 ---
 
-> ⚠️ Todos los ejercicios usan datos de ejemplo, plataformas de entrenamiento o máquinas virtuales aisladas. Nunca se analiza malware ni se prueban ataques fuera de entornos controlados.
+## Resultados y progreso
+
+Este apartado se actualizará conforme se completen nuevos laboratorios, investigaciones y ejercicios prácticos.
+
+El propósito es mantener un registro transparente de mi aprendizaje y demostrar progresivamente mis habilidades en ciberseguridad defensiva y operaciones SOC.
+
+---
+
+## Aviso legal
+
+Todos los ejercicios documentados en esta sección se realizan exclusivamente con fines educativos y en entornos controlados.
+
+Las actividades de simulación, análisis de amenazas y pruebas de seguridad no se realizan sobre sistemas sin autorización.
+
+**Aprender. Investigar. Detectar. Defender.**

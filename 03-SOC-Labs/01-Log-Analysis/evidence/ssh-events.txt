@@ -1,0 +1,51 @@
+SSH EVENTS
+==========
+
+Investigation objective:
+Identify SSH authentication activity and determine whether remote
+authentication attempts were present during the reviewed period.
+
+SSH service status:
+
+Command:
+systemctl status ssh
+
+Result:
+- Service: ssh.service
+- Status: inactive (dead)
+- Loaded: yes
+- Enabled: no
+
+Journal investigation:
+
+Command:
+sudo journalctl _COMM=sshd --since "24 hours ago" --no-pager
+
+Result:
+-- No entries --
+
+Additional authentication searches were performed for:
+
+- Failed password
+- Accepted password
+- authentication failure
+- authentication success
+- PAM authentication events
+
+No SSH authentication events were identified in the reviewed period.
+
+Login history was also reviewed using:
+
+last -n 30
+
+The observed sessions were primarily local graphical sessions using
+tty7 / :0 and LightDM.
+
+Assessment:
+
+No evidence of SSH authentication activity was identified during
+the reviewed period.
+
+This finding does not prove that SSH activity never occurred on
+the system. It only reflects the available logs and the reviewed
+time window.

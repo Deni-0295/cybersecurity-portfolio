@@ -1,0 +1,6 @@
+SOURCE IP ANALYSIS
+------------------
+
+Source IP: 192.0.2.50
+Failed attempts: 5
+Successful attempts: 1

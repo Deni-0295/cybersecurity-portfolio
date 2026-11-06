@@ -1,0 +1,14 @@
+SSH AUTHENTICATION SUMMARY
+--------------------------
+
+IP: 192.0.2.50
+Failed attempts: 5
+Successful attempts: 1
+
+EVENT TIMELINE
+First event: 10:01:21
+Last event: 10:01:40
+Total interval: 19 seconds
+
+BRUTE FORCE DETECTION RESULTS
+ALERT: 192.0.2.50 has 5 failed authentication attempts.
